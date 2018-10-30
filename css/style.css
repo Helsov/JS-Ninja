@@ -1,0 +1,23 @@
+#first {
+    color: green;
+}
+
+#second {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}
+
+#results li.pass {
+    color: green;
+}
+
+#results li.fail {
+    color: red;
+}
+
+li {
+    list-style: inside;
+}
