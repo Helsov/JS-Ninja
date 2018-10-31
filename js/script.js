@@ -92,4 +92,70 @@ function isPrime (value){
 
 };
 
+//Бургер
+class Burger {
+    constructor(builder) {
+        this.size = builder.size;
+        this.cheeze = builder.cheeze || false;
+        this.pepperoni = builder.pepperoni || false;
+        this.lettuce = builder.lettuce || false;
+        this.tomato = builder.tomato || false;
+    }
+}
+
+//Строитель Бургера
+class BurgerBuilder {
+ 
+    constructor(size) {
+        this.size = size;
+    };
+ 
+    addPepperoni() {
+        this.pepperoni = true;
+        return this;
+    };
+ 
+    addLettuce() {
+        this.lettuce = true;
+        return this;
+    };
+ 
+    addCheeze() {
+        this.cheeze = true;
+        return this;
+    };
+ 
+    addTomato() {
+        this.tomato = true;
+        return this;
+    };
+ 
+    build() {
+        return new Burger(this);
+    };
+}
+
+//Создаем бургер
+const burger = (new BurgerBuilder(14))
+    .addPepperoni()
+    .addLettuce()
+    .addTomato()
+	.build()
+	
+
+//Синглтон
+const president = (function(){
+    const presidentsPrivateInformation = 'Super private';
+    const name = 'Turd Sandwich';
+    const getName = () => name;
+    return {
+        getName
+    };
+}());
+
+president.getName() // 'Turd Sandwich'
+president.name // undefined
+president.presidentsPrivateInformation // undefined
+
+
 console.timeEnd('Work');
