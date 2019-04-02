@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,15 +8,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
-    
+
 </head>
+
 <body>
-    <ul id="first"></ul>
+    <!-- <ul id="first"></ul>
     <ul id="results"></ul>
-    <ul id="second"></ul>
+    <ul id="second"></ul> -->
+    <div class="test-block test-block__one"></div>
+    <div class="test-block test-block__two"></div>
+
+    <div id="slide">
+        <img src="img/1.png" alt="" class="slide-single">
+        <img src="img/2.png" alt="" class="slide-single">
+        <img src="img/3.png" alt="" class="slide-single">
+        <img src="img/4.png" alt="" class="slide-single">
+        <img src="img/5.png" alt="" class="slide-single">
+    </div>
+
+    <my-element>Greeting</my-element>
+    <my-element name="Vova">
+        <div style="color: red;">Personalized Greeting</div>
+    </my-element>
+
+    <p id="elem">Доброе утро, страна!</p>
 
 
+    <fancy-button>Hello</fancy-button>
+    <fancy-button icon="img/1.png">refresh</fancy-button>
+    <template>
+        <style>
+            :host {
+                align-items: center;
+                border: 2px solid currentColor;
+                border-radius: 2em;
+                color: #000;
+                cursor: pointer;
+                display: inline-flex;
+                font-family: sans-serif;
+                font-size: .8em;
+                height: 2.5em;
+                justify-content: center;
+                padding: 0 2em;
+                vertical-align: middle;
+            }
 
+            :host(:hover) {
+                box-shadow: 2px 2px 0 currentColor;
+                text-decoration: underline;
+            }
+
+            :host(:active) {
+                box-shadow: none;
+                transform: translate(2px, 2px);
+            }
+
+            img {
+                display: none;
+                height: 1em;
+                margin-right: .5em;
+                width: 1em;
+            }
+        </style>
+        <img><span><slot></slot></span>
+    </template>
     <script src="js/script.js"></script>
 </body>
+
 </html>
